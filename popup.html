@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>F1GENZ Tools</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+  <div class="popup-container">
+    <div class="header">
+      <div class="logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+          <path d="M2 17l10 5 10-5"></path>
+          <path d="M2 12l10 5 10-5"></path>
+        </svg>
+      </div>
+      <div class="header-text">
+        <h1>F1GENZ Tools</h1>
+        <p class="subtitle">Công cụ hỗ trợ Haravan Dev</p>
+      </div>
+      <span class="version" id="versionLabel"></span>
+    </div>
+
+    <!-- Thông báo cập nhật -->
+    <div class="update-banner" id="updateBanner" hidden>
+      <div class="update-info">
+        <strong>🆕 Có phiên bản mới: <span id="updateVersion"></span></strong>
+        <p id="updateChangelog"></p>
+      </div>
+      <a href="#" id="updateLink" class="update-btn" target="_blank">Tải bản mới</a>
+    </div>
+
+    <!-- Tool 1: Code Beautifier -->
+    <div class="tool-section">
+      <div class="tool-header">
+        <span class="tool-icon">✨</span>
+        <span class="tool-name">Làm đẹp Code</span>
+      </div>
+
+      <div class="shortcut-badge">
+        <span class="key">Ctrl</span>
+        <span class="plus">+</span>
+        <span class="key">B</span>
+      </div>
+
+      <p class="tool-desc">Hoặc nhấn <strong>Ctrl+C</strong> để tự động làm đẹp clipboard.</p>
+
+      <div class="section">
+        <label class="label">Kích thước thụt lề</label>
+        <div class="radio-group" id="indentSize">
+          <button class="radio-btn active" data-value="2">2</button>
+          <button class="radio-btn" data-value="4">4</button>
+          <button class="radio-btn" data-value="8">8</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <label class="label">Ký tự thụt lề</label>
+        <div class="radio-group" id="indentChar">
+          <button class="radio-btn active" data-value="space">Dấu cách</button>
+          <button class="radio-btn" data-value="tab">Tab</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <label class="label">Xử lý dòng trống</label>
+        <div class="radio-group" id="removeBlankLines">
+          <button class="radio-btn" data-value="all">Xoá hết</button>
+          <button class="radio-btn active" data-value="collapse">Gộp lại</button>
+          <button class="radio-btn" data-value="keep">Giữ nguyên</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="toggle-row">
+          <label class="label">Giữ dòng trống gốc</label>
+          <label class="toggle">
+            <input type="checkbox" id="preserveNewlines" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="toggle-row">
+          <label class="label">Thêm dòng mới cuối file</label>
+          <label class="toggle">
+            <input type="checkbox" id="endWithNewline" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="toggle-row">
+          <label class="label">Tự động beautify khi Copy</label>
+          <label class="toggle">
+            <input type="checkbox" id="autoCopyBeautify" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <button class="save-btn" id="saveBtn">
+      <span>💾</span> Lưu Cài Đặt
+    </button>
+
+    <div class="footer">
+      <p>Hỗ trợ: HTML, Liquid, CSS, JavaScript</p>
+      <p class="footer-hint">Haravan Editor → <strong>Ctrl+B</strong> hoặc <strong>Ctrl+C</strong></p>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+
+</html>

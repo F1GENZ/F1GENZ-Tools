@@ -1,0 +1,61 @@
+{
+  "manifest_version": 3,
+  "name": "F1GENZ Tools",
+  "version": "1.0.0",
+  "description": "Bộ công cụ hỗ trợ phát triển Haravan — Làm đẹp code Liquid/HTML/CSS/JS và nhiều tính năng khác",
+  "icons": {
+    "64": "icons/icon64.png"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "clipboardRead",
+    "clipboardWrite"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.myharavan.com/*",
+        "*://*.haravan.com/*"
+      ],
+      "js": [
+        "lib/beautify.js",
+        "lib/beautify-css.js",
+        "lib/beautify-html.js",
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["page-script.js"],
+      "matches": [
+        "*://*.myharavan.com/*",
+        "*://*.haravan.com/*"
+      ]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "64": "icons/icon64.png"
+    }
+  },
+  "commands": {
+    "beautify-code": {
+      "suggested_key": {
+        "default": "Ctrl+B",
+        "windows": "Ctrl+B",
+        "mac": "Command+B"
+      },
+      "description": "Làm đẹp code trong Haravan editor"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
