@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "F1GENZ Tools",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Bộ công cụ hỗ trợ phát triển Haravan — Làm đẹp code Liquid/HTML/CSS/JS và nhiều tính năng khác",
   "icons": {
     "64": "icons/icon64.png"
@@ -16,26 +16,31 @@
     {
       "matches": [
         "*://*.myharavan.com/*",
-        "*://*.haravan.com/*"
+        "*://*.haravan.com/*",
+        "*://web.haravan.app/*"
       ],
       "js": [
-        "lib/beautify.js",
-        "lib/beautify-css.js",
-        "lib/beautify-html.js",
         "content.js"
       ],
       "css": [
         "content.css"
       ],
-      "run_at": "document_idle"
+      "run_at": "document_idle",
+      "all_frames": true
     }
   ],
   "web_accessible_resources": [
     {
-      "resources": ["page-script.js"],
+      "resources": [
+        "page-script.js",
+        "lib/beautify.js",
+        "lib/beautify-css.js",
+        "lib/beautify-html.js"
+      ],
       "matches": [
         "*://*.myharavan.com/*",
-        "*://*.haravan.com/*"
+        "*://*.haravan.com/*",
+        "*://web.haravan.app/*"
       ]
     }
   ],
